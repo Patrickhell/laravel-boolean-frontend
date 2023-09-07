@@ -1,6 +1,8 @@
 <template>
     <div class="cocktail-container">
-      <SingleCocktail v-for="cocktail in cocktails" :cocktail= "cocktail" :key="cocktail" />
+        <SingleCocktail v-for="cocktail in cocktails" :key="cocktail" :cocktail= "cocktail"  
+        @click="$router.push({ name: 'cocktails.show', params: { slug: cocktail.slug} })" />
+      
     </div>
 </template>
 

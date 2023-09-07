@@ -1,5 +1,5 @@
 <template>
-    <div class="card cocktail-card " style="height: 35rem;">
+    <div class="card cocktail-card " style="height: 37rem; width: 20rem;">
         <div class="card-body">
             <img :src="cocktail.image" alt="" style="height: 20rem;"/> 
             <div class="card-img-top"  >
@@ -8,7 +8,10 @@
                 </h4>
                 <p>  <strong> ID : </strong> <span class="font-size "> {{ cocktail.id }}</span></p>
                 <p> <strong> Cocktail name's:</strong> <span class="font-size ">{{ cocktail.name}}</span></p>
-                <p><strong> Ingredients :</strong> <span class="font-size">{{ cocktail.ingredients}}</span></p> 
+                <p><strong> Slug :</strong> <span class="font-size">{{ cocktail.slug}}</span></p> 
+                <p v-for=" ingredient in cocktail.ingredients" :key="ingredient" :style="'color:' + ingredient.color + ';'">
+                    <strong> Ingredients : </strong><span>{{ingredient.name }}</span>
+                </p>
                 <p> <strong>Garnish: </strong>  <span class="font-size ">{{ cocktail.garnish }} </span></p>
             </div>
         </div>
@@ -17,6 +20,7 @@
 
 <script>
 export default {
+    
     name: 'SingleCocktail',
 
         props : {
@@ -33,6 +37,7 @@ div.cocktail-card{
             background-color: rgb(189, 197, 211);
             color: black;
             margin-bottom: 2rem;
+           
             
 
 

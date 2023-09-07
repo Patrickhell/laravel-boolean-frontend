@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Cocktails from './pages/Cocktails.vue';
 import AboutUs from './pages/AboutUs.vue';
 import Contacts from './pages/Contacts.vue';
+import CocktailShow from './pages/CocktailShow.vue';
 
 
 
@@ -11,12 +12,6 @@ import Contacts from './pages/Contacts.vue';
 const router = createRouter({
     history: createWebHistory(),
     routes : [
-         {
-            path :'/',
-            name : 'cocktails.index',
-            component : Cocktails,
-
-         },
         
         {
             path :'/about-us',
@@ -30,6 +25,19 @@ const router = createRouter({
             name : 'contact',
             component : Contacts,
 
+        },
+        {
+            path :'/',
+            name : 'cocktails.index',
+            component : Cocktails,
+
+         },
+        
+
+        {
+            path :'/cocktails/:slug',
+            name : 'cocktails.show',
+            component : CocktailShow,
         },
     ]
 })
