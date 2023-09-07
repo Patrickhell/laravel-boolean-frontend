@@ -1,7 +1,7 @@
 <template>
-    <nav>
-        <ul>
-            <li v-for="link in linkList " :key="link">
+    <nav class="navbar bg-dark ">
+        <ul  >
+            <li v-for="link in linkList " :key="link" >
                 <router-link :to="{ name: link.route }">
                     {{ link.name }}
                 </router-link>
@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
  nav{
         margin-bottom: 4rem;
         width: 100%;
@@ -53,14 +53,14 @@ export default {
             width: 100%;
             display: flex;
             justify-content: space-around;
-            font-size: 2rem;
+            font-size: 1rem;
             list-style-type: none;
 
             li{
                 margin-right: 2rem;
                 a {
                     text-decoration: none;
-                    color: black;
+                    color: white;
                 }
             }
         }
